@@ -1,3 +1,3 @@
 # website_portfolio
 
-A new Flutter project.
+Minimalistic and well-animated portfolio website.

@@ -17,3 +17,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: false
+
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Medium.ttf
+        - asset: assets/fonts/Inter-SemiBold.ttf
