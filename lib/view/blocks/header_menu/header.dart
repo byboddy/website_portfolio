@@ -12,8 +12,8 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColumnLayout(
       first: const Text(
-        "Владислав Чернюк",
-        style: FontStyles.defaultText,
+        "Владислав_Чернюк",
+        style: FontStyles.logo,
       ),
       second: Row(
         children: [

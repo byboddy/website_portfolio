@@ -11,24 +11,25 @@ class ColumnLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
       mainAxisSize: MainAxisSize.max,
       children: [
         Expanded(
           flex: 22,
-          child: first ?? const Placeholder(),
+          child: first ?? const SizedBox.shrink(),
         ),
         Expanded(
           flex: 33,
-          child: second ?? const Placeholder(),
+          child: second ?? const SizedBox.shrink(),
         ),
         Expanded(
           flex: 29,
-          child: third ?? const Placeholder(),
+          child: third ?? const SizedBox.shrink(),
         ),
         Expanded(
           flex: 17,
-          child: fourth ?? const Placeholder(),
+          child: fourth ?? const SizedBox.shrink(),
         ),
       ],
     );
