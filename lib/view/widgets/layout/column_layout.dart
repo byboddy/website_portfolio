@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ColumnLayout extends StatelessWidget {
-  const ColumnLayout({super.key, this.first, this.second, this.third, this.fourth});
+class CustomColumnsLayout extends StatelessWidget {
+  const CustomColumnsLayout({super.key, this.first, this.second, this.third, this.fourth});
   final Widget? first;
   final Widget? second;
   final Widget? third;
@@ -10,26 +10,23 @@ class ColumnLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.baseline,
+    return Table(
       textBaseline: TextBaseline.alphabetic,
-      mainAxisSize: MainAxisSize.max,
+      defaultVerticalAlignment: TableCellVerticalAlignment.baseline,
+      columnWidths: const <int, TableColumnWidth>{
+        0: FlexColumnWidth(22),
+        1: FlexColumnWidth(33),
+        2: FlexColumnWidth(29),
+        3: FlexColumnWidth(17),
+      },
       children: [
-        Expanded(
-          flex: 22,
-          child: first ?? const SizedBox.shrink(),
-        ),
-        Expanded(
-          flex: 33,
-          child: second ?? const SizedBox.shrink(),
-        ),
-        Expanded(
-          flex: 29,
-          child: third ?? const SizedBox.shrink(),
-        ),
-        Expanded(
-          flex: 17,
-          child: fourth ?? const SizedBox.shrink(),
+        TableRow(
+          children: <Widget>[
+            first ?? const SizedBox.shrink(),
+            second ?? const SizedBox.shrink(),
+            third ?? const SizedBox.shrink(),
+            fourth ?? const SizedBox.shrink(),
+          ],
         ),
       ],
     );

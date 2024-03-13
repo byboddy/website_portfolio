@@ -1,5 +1,5 @@
 name: website_portfolio
-description: A new Flutter project.
+description: Minimalistic and well-animated portfolio website.
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # flutter_localization: ^0.2.0
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
@@ -17,10 +21,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: false
-
+  generate: true
 
   fonts:
     - family: Inter
       fonts:
         - asset: assets/fonts/Inter-Medium.ttf
         - asset: assets/fonts/Inter-SemiBold.ttf
+flutter_intl:
+  enabled: true

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website_portfolio/l10n/s.dart';
 import 'package:website_portfolio/view/widgets/layout/column_layout.dart';
 import 'package:website_portfolio/view/styles/font_styles.dart';
 import 'package:website_portfolio/view/widgets/ui%20elements/buttons.dart';
@@ -10,22 +11,22 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ColumnLayout(
-      first: const Text(
-        "Владислав_Чернюк",
-        style: FontStyles.logo,
+    return CustomColumnsLayout(
+      first: Text(
+        S.of(context)!.authorName,
+        style: FontStyles.defaultText,
       ),
       second: Row(
         children: [
           HeaderMenuButton(
-            text: "Головна",
+            text: S.of(context)!.menuHome,
             onPressed: () {},
           ),
           SizedBox(
             width: menuButtonsSpacing,
           ),
           HeaderMenuButton(
-            text: "Проекти",
+            text: S.of(context)!.menuProjects,
             onPressed: () {},
           ),
         ],
@@ -34,8 +35,8 @@ class Header extends StatelessWidget {
         "українська",
         style: FontStyles.defaultText,
       ),
-      fourth: const Text(
-        "vladcherniuk8@gmail.com",
+      fourth: Text(
+        S.of(context)!.authorEmail,
         style: FontStyles.defaultText,
       ),
     );

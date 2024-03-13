@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:website_portfolio/l10n/s.dart';
 import 'package:website_portfolio/view/pages/first_page.dart';
 
 void main() {
@@ -10,10 +11,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(fontFamily: "Inter"),
+    return const MaterialApp(
+      localizationsDelegates: S.localizationsDelegates,
+      supportedLocales: S.supportedLocales,
+      locale: Locale('uk'),
       debugShowCheckedModeBanner: false,
-      home: const FirstPage(),
+      home: FirstPage(),
     );
   }
 }
